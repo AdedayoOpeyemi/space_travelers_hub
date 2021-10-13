@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import planetImg from '../assets/planet.png';
 
 const NavBar = () => {
   const links = [
@@ -21,18 +22,19 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="panel-bg">
-      <div className="d-flex flex-row">
-        <ul className="d-flex flex-row align-items-center m-0 list-style-none p-0">
-          <li className="mx-2">
-            <p className="Bookstore-CMS">
-              Space Travelers Hub
-            </p>
-          </li>
+    <nav className="panel-bg navbar navbar-expand-lg navbar-light bg-white">
+      <div className="d-flex flex-row justify-content-between w-100 container border-bottom">
+        <div className="d-flex flex-row align-items-center">
+          <img src={planetImg} alt="logo" className="logo" />
+          <p className="Bookstore-CMS m-2 fs-1">
+            Space Travelers Hub
+          </p>
+        </div>
+        <ul className="navbar-nav mb-2 mb-lg-0 d-flex flex-row align-items-center ">
           {links.map((link) => (
-            <li key={link.id} className="mx-2">
+            <li key={link.id} className="nav-item">
               <NavLink
-                className="BOOKS text-decoration-none text-muted"
+                className="BOOKS nav-link"
                 to={link.path}
                 exact
               >

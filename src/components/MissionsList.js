@@ -10,7 +10,9 @@ const MissionsLists = () => {
   const loadMissionsAction = bindActionCreators(loadMissionsData, dispatch);
 
   useEffect(() => {
-    loadMissionsAction();
+    if (missions.length === 0) {
+      loadMissionsAction();
+    }
     return null;
   }, []);
 

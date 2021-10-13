@@ -35,7 +35,7 @@ Rocket.propTypes = {
   data: PropTypes.shape({
     rocket_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     flickr_images: PropTypes.instanceOf(Array),
     reserved: PropTypes.bool,
   }).isRequired,

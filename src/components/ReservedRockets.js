@@ -12,8 +12,8 @@ const ReservedRockets = () => {
   });
 
   return (
-    <div className="col-6">
-      <h2>My Missions</h2>
+    <div className="col-6 pe-0">
+      <h2>My Rockets</h2>
       <ul className="list-group">
         {filteredRockets.map((rocket) => (
           <li key={rocket.id} className="list-group-item">

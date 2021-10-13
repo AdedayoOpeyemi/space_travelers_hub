@@ -12,7 +12,7 @@ const JoinedMissionsList = () => {
   });
 
   return (
-    <div className="col-6">
+    <div className="col-6 ps-0">
       <h2>My Missions</h2>
       <ul className="list-group">
         {filteredMissions.map((mission) => (
