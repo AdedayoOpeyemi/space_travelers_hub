@@ -14,7 +14,7 @@ const JoinedMissionsList = () => {
   return (
     <div className="col-6 ps-0">
       <h2>My Missions</h2>
-      <ul className="list-group">
+      <ul className="list-group" id="joinedMissions">
         {filteredMissions.map((mission) => (
           <li key={mission.mission_id} className="list-group-item">
             <p>{mission.mission_name}</p>
