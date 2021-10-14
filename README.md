@@ -61,18 +61,18 @@ npm start
 ## Authors 👤 
 
 👤 **Opeyemi Oyelesi**
-```
+
 - GitHub: [@AdedayoOpeyemi](https://github.com/AdedayoOpeyemi)
 - Twitter: [@Oyelesiopy](https://twitter.com/Oyelesiopy)
 - LinkedIn: [Opeyemi Oyelesi](https://linkedin.com/in/opeyemioyelesi)
-```
+
 
 👨‍💻 **Jose Alberto Arriaga Ramos**
-```
+
 - GitHub: [@jaarkira](https://github.com/jaarkira )
 - Twitter: [@91_jaar](https://twitter.com/91_jaar )
 - LinkedIn: [Jose Arriaga](https://www.linkedin.com/in/jaar/)
-```
+
 
 ## 🤝 Contributing
 
