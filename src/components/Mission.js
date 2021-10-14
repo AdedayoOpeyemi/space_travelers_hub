@@ -20,9 +20,9 @@ const Mission = (props) => {
   return (
     <tr>
       <td className="p-2">
-        <p className="fs-6 fw-bold">{missionName}</p>
+        <p className="fs-6 fw-bold" id="missionName">{missionName}</p>
       </td>
-      <td className="p-3">
+      <td className="p-3" id="description">
         {description}
       </td>
       <td className="p-3">
@@ -62,5 +62,7 @@ Mission.propTypes = {
     status: PropTypes.bool,
   }).isRequired,
 };
+
+// missions
 
 export default Mission;

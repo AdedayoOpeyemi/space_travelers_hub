@@ -1,5 +1,5 @@
 import React from 'react';
-import JoinedMissionsList from './JoinenMissions';
+import JoinedMissionsList from './JoinedMissions';
 import ReservedRockets from './ReservedRockets';
 
 const MyProfile = () => (
