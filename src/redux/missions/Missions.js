@@ -38,7 +38,7 @@ export const reducer = (state = initialState, action) => {
     case JOIN_MISSION:
       return state.map((mission) => {
         if (mission.mission_id === action.payload) {
-          return { ...mission, status: true };
+          return { ...mission, reserved: true };
         }
         return mission;
       });
@@ -46,7 +46,7 @@ export const reducer = (state = initialState, action) => {
       return state.map((mission) => {
         const modificator = mission;
         if (mission.mission_id === action.payload) {
-          modificator.status = false;
+          modificator.reserved = false;
         }
         return modificator;
       });

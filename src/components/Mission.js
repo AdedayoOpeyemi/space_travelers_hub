@@ -6,7 +6,7 @@ const Mission = (props) => {
   const { data } = props;
   const missionName = data.mission_name;
   const id = data.mission_id;
-  const { description, status } = data;
+  const { description, reserved } = data;
   const dispatch = useDispatch();
 
   const joinMissionsButton = () => {
@@ -26,26 +26,26 @@ const Mission = (props) => {
         {description}
       </td>
       <td className="p-3">
-        <span className={status
+        <span className={reserved
           ? 'badge rounded-pill bg-info'
           : 'badge rounded-pill bg-secondary'}
         >
-          {status
+          {reserved
             ? 'ACTIVE MEMBER'
             : 'NOT A MEMBER'}
         </span>
       </td>
       <td className="p-3">
         <button
-          className={status
+          className={reserved
             ? 'btn btn-outline-danger'
             : 'btn btn-outline-dark'}
           type="button"
-          onClick={status
+          onClick={reserved
             ? leaveMissionButton
             : joinMissionsButton}
         >
-          {status
+          {reserved
             ? 'Leave Mission'
             : 'Join Mission'}
         </button>
@@ -59,7 +59,7 @@ Mission.propTypes = {
     mission_id: PropTypes.string.isRequired,
     mission_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    status: PropTypes.bool,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 

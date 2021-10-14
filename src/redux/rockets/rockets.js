@@ -31,8 +31,6 @@ export const cancelRockets = (payload) => ({
 export const loadRocketsData = () => async (dispatch) => {
   const res = await fetch('https://api.spacexdata.com/v3/rockets');
   const data = await res.json();
-  // eslint-disable-next-line
-  console.log(data);
   const rocket_data = data.map(selectFewerProps);
   dispatch(loadRockets(rocket_data));
 };

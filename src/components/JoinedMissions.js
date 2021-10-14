@@ -5,7 +5,7 @@ const JoinedMissionsList = () => {
   const missions = useSelector((state) => state.missions);
 
   const filteredMissions = missions.filter((mission) => {
-    if (mission.status) {
+    if (mission.reserved) {
       return mission;
     }
     return null;
