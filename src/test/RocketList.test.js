@@ -1,17 +1,10 @@
-/**
- * @jest-environment jsdom
- */
-
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import RocketsMocks from './__Mocks__/Rockets.mocks';
 import store from '../redux/configureStore';
 import RocketList from '../components/RocketList';
 import { loadRockets } from '../redux/rockets/rockets';
-
-// import Mission from '../components/Mission';
 
 const renderWithRedux = (component) => ({
   ...render(
@@ -31,5 +24,12 @@ describe('Test Rocket List', () => {
     renderWithRedux(<RocketList data={data} />);
     const rocketList = document.getElementById('rocket-list-container');
     expect(rocketList.childNodes.length).toBe(data.length);
+  });
+
+  test('The Rocket List renders rocket items with Reserve Rocket button', () => {
+    const data = store.getState().rockets;
+    renderWithRedux(<RocketList data={data} />);
+    const rerservationButton = screen.getAllByRole('button');
+    expect(rerservationButton[0].innerHTML).toBe('Reserve Rocket');
   });
 });
