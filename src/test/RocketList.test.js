@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import RocketsMocks from './__Mocks__/Rockets.mocks';
 import store from '../redux/configureStore';
 import RocketList from '../components/RocketList';
@@ -31,5 +31,14 @@ describe('Test Rocket List', () => {
     renderWithRedux(<RocketList data={data} />);
     const rerservationButton = screen.getAllByRole('button');
     expect(rerservationButton[0].innerHTML).toBe('Reserve Rocket');
+  });
+
+  test('Rocket Reservations will show the user reserved rockets from rockets page', () => {
+    const data = store.getState().rockets;
+    const { getAllByText } = renderWithRedux(<RocketList data={data} />);
+    fireEvent.click(getAllByText('Reserve Rocket')[0]);
+    fireEvent.click(getAllByText('Reserve Rocket')[1]);
+    expect(store.getState().rockets.filter((rocket) => rocket.reserved === true).length).toBe(2);
+    expect(store.getState().rockets.filter((rocket) => rocket.reserved !== true).length).toBe(2);
   });
 });
