@@ -36,6 +36,7 @@ const NavBar = () => {
               <NavLink
                 className="BOOKS nav-link"
                 to={link.path}
+                activeClassName="active-link"
                 exact
               >
                 {link.text}
