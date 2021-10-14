@@ -19,12 +19,21 @@ describe('Test Rocket Item', () => {
     store.dispatch(loadRockets(RocketsMocks));
   });
 
-  test('The Reservation button renders correctly', () => {
+  test('The Reservation button renders with a Cancel Reservation text', () => {
     const data = store.getState().rockets;
     const rocketDetails = data[0];
     const reserved = true;
     renderWithRedux(<Button id={rocketDetails.id} reserved={reserved} />);
     const button = document.querySelector('button').innerHTML;
     expect(button).toBe('Cancel Reservation');
+  });
+
+  test('The Reservation button renders with a Reserve rocket text', () => {
+    const data = store.getState().rockets;
+    const rocketDetails = data[0];
+    const reserved = false;
+    renderWithRedux(<Button id={rocketDetails.id} reserved={reserved} />);
+    const button = document.querySelector('button').innerHTML;
+    expect(button).toBe('Reserve Rocket');
   });
 });
