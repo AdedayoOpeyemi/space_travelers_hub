@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import MissionsMock from './__Mocks__/Missions.mocks';
 import store from '../redux/configureStore';
 import MissionsLists from '../components/MissionsList';
